@@ -21,7 +21,7 @@ private _cScriptSettings = "cScripts Mission Settings";
     "LIST",
     ["Mission Type", "This will deside on what kind of startup hint you get on mission start.\n"],
     [_cScriptSettings, "1; Mission"],
-    [[0,1,2,3,4], ["Custom", "Operation", "Training", "Public", "Public ALiVE"], 1],
+    [[0,1,2,3,4], ["Custom", "Operation", "Training", "Public", "Public ALiVE"], 4],
     true,
     {}
 ] call CBA_fnc_addSetting;

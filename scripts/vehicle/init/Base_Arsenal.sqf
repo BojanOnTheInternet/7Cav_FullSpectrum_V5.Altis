@@ -1,14 +1,6 @@
-/*
-Edited to:
-	a) Spawn the correct box with the correct settings using the correct functioins
-	b) Blacklist ALiVE_Tablet
-	c) Make your life harder. 
-
-	~Dave
-*/
 params [["_object", objNull, [objNull]]];
 // XXX: cScripts by SGT.Brostrom.A | https://github.com/7Cav/cScripts/wiki/Function-list#fn_doStarterCrate
-[_object, "none", true, true, true, true, false] call cScripts_fnc_doStarterCrate;
+[_object, "charlie", true, true, true, true, false] call cScripts_fnc_doStarterCrate;
 [_object, true] call ace_arsenal_fnc_initBox;
 sleep 5;
 [_object, [

@@ -1,10 +1,5 @@
 diag_log "initServer start";
 
-#include "\serverscripts\zeusserverscripts\secretKey.sqf"
-missionNamespace setVariable["LOYALTY_CIPHER", CIPHERSECRETKEY, true];
-
-_null = [] execVM "scripts\sessionTimeMessagesInit.sqf";
-
 // Disable RHS engine start up so vehicles move immediately when spawned
 RHS_ENGINE_STARTUP_OFF = 1;
 
@@ -20,9 +15,6 @@ east setFriend [independent, 1];
 // Make sure AAF will attack NATO
 independent setFriend [west, 0];
 
-//BUG: Fool BIS_fnc_drawMinefields into believing that it's already running.  This turns off the automatic display of minefields on the map.  The difficulty setting in the server configuration file doesn't seem to work.
-bis_fnc_drawMinefields_active = true;
-
 // Start times selected randomly throughout the daylight hours between sunrise and one hour before sunset
 waitUntil { time > 0 }; // Allow time subsystem to initialize so that missionStart is correct
 private _date = missionStart select [0, 5];
@@ -37,7 +29,6 @@ _date set [4, _startMinute];
 
 setDate _date;
 
-
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
 [] execVM "ASL_AdvancedSlingLoading\functions\fn_advancedSlingLoadInit.sqf";
@@ -45,15 +36,12 @@ setDate _date;
 [] execVM "AT_AdvancedTowing\functions\fn_advancedTowingInit.sqf";
 [] execVM "AUR_AdvancedUrbanRappelling\functions\fn_advancedUrbanRappellingInit.sqf";
 
-[] execVM "scripts\decals.sqf";
-[] execVM "scripts\fortifyInit.sqf";
-
 // XXX Custom ALiVE Factions and Tasks
-execVM "alive\CustomFactions.sqf";
-execVM "alive\Tasks.sqf";
+[] execVM "alive\CustomFactions.sqf";
+[] execVM "alive\Tasks.sqf";
 
 // XXX VCOM init
-execVM "Vcom\VcomInit.sqf";
+[] execVM "Vcom\VcomInit.sqf";
 
 enableEnvironment [false, true];
 

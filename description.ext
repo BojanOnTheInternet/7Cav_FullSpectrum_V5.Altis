@@ -1,116 +1,70 @@
-author = "People";
-overviewPicture = "media\images\loading.jpg";
+/*           INFO            */
+    author              = "your friends at the 7th Cavalry Regiment!";
+    onLoadName          = "7th Cavalry Full Spectrum (Beta)";
+    onLoadMission       = "Welcome to 7th Cavalry Tactical Realism! Join us on TeamSpeak at ts3.7cav.us Password: 7thCavalry";
+    onLoadIntro         = "7th Cavalry Full Spectrum (Beta)";
+    loadScreen          = "Data\MissionLogo.paa";
+    overviewPicture     = "Data\MissionLogo.paa";
+/*           RESAPWN          */
 
-loadScreen = "media\images\loading.jpg";
-onLoadName = "7Cav Full Spectrum v5.0.0";
-onLoadMission = "Welcome to 7th Cavalry Tactical Realism! Join us on TeamSpeak at ts3.7cav.us Password: 7thCavalry";
+    respawn                = BASE;
+    respawnDelay           = 4;
+    respawnTemplatesWest[] = {"MenuPosition"};
+    RespawnDialog = 0;
 
-briefing = 0;
-debriefing = 0;
+/*           RULES            */
+    cba_settings_hasSettingsFile = 1;
+    disabledAI              = true;
+    disableChannels[]       = {{0,false,true},{1,false,true},{2,true,true},{6,true,true}};
+    forceRotorLibSimulation = 0;
 
-class Header
-{
-	gameType = COOP;
-	minPlayers = 1;
-	maxPlayers = 60;
+/*     GARBADGE COLLECTIOR    */
+    corpseManagerMode = 3;
+    corpseLimit = 25;
+    corpseRemovalMinTime = 60;
+    corpseRemovalMaxTime = 7200;
+    minPlayerDistance = 250;
+
+/*          SYSTEMS           */
+    class Header
+    {
+        gameType = Coop;
+        minPlayers = 1;
+        maxPlayers = 60;
+     };
+
+    class Extended_PreInit_EventHandlers {
+        cScripts_preInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_preInit.sqf'";
+        VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
+    };
+    class Extended_PostInit_EventHandlers {
+        cScripts_postInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_postInit.sqf'";
+    }; 
+
+    class CfgFunctions {
+        #include "cScripts\CavFnc\CfgFunctions.hpp"
+        #include "cScripts\Loadouts\script\CfgFunctions.hpp"
+        #include "cScripts\ViewingDistance\CfgFunctions.hpp"
+        #include "vcom\cfgFunctions.hpp"
+        #include "JB\CfgFunctions.hpp"
+        #include "INIT\CfgFunctions.hpp"
+    };
+    #include "cScripts\Loadouts\script\CfgPoppy.hpp"
+    #include "cScripts\ViewingDistance\GUI.h"
+    #include "cScripts\CfgLoadouts.hpp"
+
+// XXX: Vcom AI | Taken straight from their GIT
+class CfgRemoteExec {
+	// List of script functions allowed to be sent from client via remoteExec
+	class Functions {
+		mode = 2;
+		jip = 1;		
+		class vcm_serverask { allowedTargets = 0;jip = 1; };
+		class VCM_PublicScript { allowedTargets = 0;jip = 1; };
+		class BIS_fnc_debugConsoleExec { allowedTargets = 0;jip = 1; };
+		class SpawnScript { allowedTargets = 0;jip = 1; };
+		class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
+		class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };
+	};	
 };
-
-enableDebugConsole[] =
-{
-	"76561197974853932", // Carter.D
-	"76561197988661394", // Treck.M
-	"76561198040127295", // Tully.B
-	"76561198131898852", // Argus
-	"76561198168754324", // Dakota.N
-	"76561198089890491", // Vex.W
-	"76561198020218548", // Bickford.B
-	"76561198048006094" // Bojan (not 7th Cavalry)
-};
-enableTargetDebug = 1;
-
-class Extended_PreInit_EventHandlers {
-	cScripts_preInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_preInit.sqf'";
-	tac2_preInit = "0 spawn compile preprocessFileLineNumbers 'Tac2\tac2_preInit.sqf'";
-	settings = "0 spawn compile preprocessFileLineNumbers 'simpleSplint\functions\fn_initsettings.sqf'";
-};
-class Extended_PostInit_EventHandlers {
-	cScripts_postInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_postInit.sqf'";
-	tac2_postInit = "0 spawn compile preprocessFileLineNumbers 'Tac2\tac2_postInit.sqf'";
-};
-
-
-allowFunctionsLog = 0;
-
-disabledAI = 1;
-aiKills = 0;
-enableItemsDropping = 0;
-
-Respawn = 2;
-RespawnDelay = 5;
-RespawnDialog = 0;
-
-wreckManagerMode = 0;
-corpseManagerMode = 0;
-
-#include "Tac2\loyalty\loyalty_gui.hpp"
-#include "Tac2\loyalty\loyalty_hud.hpp"
-
-class CfgFunctions
-{
-	#include "cScripts\CavFnc\CfgFunctions.hpp"
-	#include "cScripts\Loadouts\script\CfgFunctions.hpp"
-	#include "cScripts\ViewingDistance\CfgFunctions.hpp"
-	#include "simpleSplint\CfgFunctions.hpp"		// Simple Splint
-	#include "Tac2\CfgFunctions.hpp"
-	#include "vcom\cfgFunctions.hpp"
-};
-
-#include "cScripts\Loadouts\script\CfgPoppy.hpp"
-#include "cScripts\ViewingDistance\GUI.h"
-#include "cScripts\CfgUnitInsignia.hpp"
-#include "cScripts\CfgLoadouts.hpp"
-
-class CfgSounds
-{
-	#include "AR_AdvancedRappelling\CfgSounds.hpp"
-};
-
-
-class RscTitles
-{
-	#include "Tac2\loyalty\loyalty_gui.hpp"
-	#include "Tac2\loyalty\loyalty_hud.hpp"
-};
-
-class CfgDebriefing
-{  
-	class RestrictedRole
-	{
-		title = "Restricted Mission Role";
-		subtitle = "";
-		description = "Certain game roles are reserved for members of 7th Cavalry.  Please return to the lobby and select a different role.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0.0,0.3,0.6,1};
-	};
-
-	class PoliceEjection
-	{
-		title = "Military Police Action";
-		subtitle = "";
-		description = "Your game session has been ended by a member of the military police.  Please abide by all server rules and heed the warnings that you are given about your conduct while playing on this server.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0.0,0.3,0.6,1};
-	};
-
-	class BootAll
-	{
-		title = "Military Police Action";
-		subtitle = "";
-		description = "All player sessions have been ended by a member of the military police.  This has been done in an effort to address a server issue.  You should be able to return to the game lobby and reconnect to the server.";
-		pictureBackground = "";
-		picture = "";
-		pictureColor[] = {0.0,0.3,0.6,1};
-	};
-};
+//End of file;

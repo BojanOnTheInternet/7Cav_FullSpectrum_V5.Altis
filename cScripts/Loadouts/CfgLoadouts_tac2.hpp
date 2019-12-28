@@ -1,9 +1,30 @@
-/* This file is for mission makers to set up Custom Loadouts for players.
-   If you need help setting up the loadout vissit the link provided:
-   https://github.com/BaerMitUmlaut/Poppy#creating-basic-loadouts
 
-    Here is a copy paste friendly empty template:*/
+class CommonBlufor {
+    // backpack[] = {""};
+    // goggles[] = {"rhs_googles_clear"};
+    // headgear[] = {"rhsusf_ach_helmet_headset_ocp"};
+    // uniform[] = {"rhs_uniform_cu_ocp_1stcav"};
+    // vest[] = {""};
 
+    // primary[] = {""};
+    // secondary[] = {""};
+    // launcher[] = {""};
+
+    // binoculars[] = {""};
+
+    // magazines[] = {""};
+    // items[] = {""};
+
+    // compass[] = {"ItemCompass"};
+    // gps[] = {""};
+    // map[] = {"ItemMap"};
+    // nvgs[] = {""};
+    // watch[] = {"itemWatch"};
+
+    // insignia[] = {""};
+    //preLoadout = "";
+    //postLoadout = "";
+};
 /*-------------------BASE LOADOUTS-------------------*/
 class tac2_base : commonBlufor {
     backpack[] = {"B_AssaultPack_mcamo"};
@@ -11,7 +32,7 @@ class tac2_base : commonBlufor {
     headgear[] = {"rhsusf_ach_helmet_headset_ess_ocp_alt"};
     uniform[] = {"rhs_uniform_acu_oefcp"};
     vest[] = {"rhsusf_iotv_ocp_Teamleader"};
-    primary[] = {"rhs_weap_m4_carryhandle_mstock","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side_bk","rhsusf_acc_ACOG_RMR"};
+    primary[] = {"rhs_weap_m4_carryhandle_mstock","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side_bk","rhsusf_acc_ACOG_RMR","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhsusf_acc_rvg_blk"};
     secondary[] = {""};
     launcher[] = {""};
     binoculars[] = {"ACE_Vector"};
@@ -46,7 +67,6 @@ class tac2_base : commonBlufor {
     preLoadout = "[(_this select 0), 'charlie', 0, 0] call cScripts_fnc_setPreInitPlayerSettings;";
     postLoadout = "[(_this select 0),true,true] call cScripts_fnc_setPostInitPlayerSettings;";
 };
-
 //LEADERSHIP
 class tac2_Leadership : commonBlufor {
     backpack[] = {"B_AssaultPack_mcamo"};
@@ -54,7 +74,7 @@ class tac2_Leadership : commonBlufor {
     headgear[] = {"rhsusf_ach_helmet_headset_ess_ocp_alt"};
     uniform[] = {"rhs_uniform_acu_oefcp"};
     vest[] = {"rhsusf_iotv_ocp_SquadLeader"};
-    primary[] = {"rhs_weap_m4_carryhandle_mstock","rhsusf_acc_ACOG_RMR","rhsusf_acc_anpeq15side_bk","rhsusf_acc_ACOG_RMR"};
+    primary[] = {"rhs_weap_m4_carryhandle_mstock","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side_bk","rhsusf_acc_eotech_xps3","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhsusf_acc_rvg_blk"};
     secondary[] = {""};
     launcher[] = {""};
     binoculars[] = {"ACE_Vector"};
@@ -95,14 +115,14 @@ class tac2_Leadership : commonBlufor {
 class tac2_crewman : tac2_base {
     headgear[] = {"rhsusf_cvc_helmet"};
     vest[] = {"rhsusf_spc_ocp_Crewman"};
-    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};  
+    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};
     magazines[] = {
         "rhsusf_mag_40Rnd_46x30_AP",2,
         "SmokeShellOrange",4,
-        "rhs_mag_m67",2
+        "rhs_mag_m67",2,
         "B_IR_Grenade",2,
         "ACE_IR_STROBE_ITEM",4
-    }
+    };
     items[] = {
         //standard items
         "ACE_microDAGR",1,
@@ -118,23 +138,21 @@ class tac2_crewman : tac2_base {
         "ACRE_ACRE_PRC343",1,
         "ACRE_PRC152",2,
         "toolkit",1
-    }
+    };
     nvgs[] = {""};
-}
-
+};
 //HELI PILOT
 class tac2_heliPilot : tac2_base {
-    headgear[] = {"H_PilotHelmetFighter_B"};
-    uniform[] = {"U_B_Plot_Coveralls"};
+    headgear[] = {"rhsusf_hgu56p_visor_mask_black"};
     vest[] = {"rhsusf_spc_ocp_Crewman"};
-    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};  
+    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};
     magazines[] = {
         "rhsusf_mag_40Rnd_46x30_AP",2,
         "SmokeShellOrange",4,
-        "rhs_mag_m67",2
+        "rhs_mag_m67",2,
         "B_IR_Grenade",2,
         "ACE_IR_STROBE_ITEM",4
-    }
+    };
     items[] = {
         //standard items
         "ACE_microDAGR",1,
@@ -150,20 +168,21 @@ class tac2_heliPilot : tac2_base {
         "ACRE_ACRE_PRC343",1,
         "ACRE_PRC152",2,
         "toolkit",1
-    }
-}
+    };
+};
 //JET PILOT
 class tac2_jetPilot : tac2_base {
-    headgear[] = {"U_B_Plot_Coveralls"};
+    headgear[] = {"H_PilotHelmetFighter_B"};
+    uniform[] = {"U_B_Plot_Coveralls"};
     vest[] = {""};
-    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};  
+    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};
     magazines[] = {
         "rhsusf_mag_40Rnd_46x30_AP",2,
         "SmokeShellOrange",4,
-        "rhs_mag_m67",2
+        "rhs_mag_m67",2,
         "B_IR_Grenade",2,
         "ACE_IR_STROBE_ITEM",4
-    }
+    };
     items[] = {
         //standard items
         "ACE_microDAGR",1,
@@ -180,9 +199,9 @@ class tac2_jetPilot : tac2_base {
         //radios
         "ACRE_ACRE_PRC343",1,
         "ACRE_PRC152",2
-    }
+    };
     nvgs[] = {""};
-}
+};
 
 /*-------------------INDIVIDUAL LOADOUTS-------------------*/
 //Platoon Leader
@@ -194,21 +213,19 @@ class tac2_Platoon_Leader : tac2_Leadership {
 //Squad Leader
 class tac2_Squad_Leader : tac2_Leadership {
 };
-
 // Alpha Fireteam Leader
 class tac2_AlphaFTL : tac2_Leadership {
     magazines[] +={
         "Chemlight_red",2
-    }
+    };
 };
 // Alpha AR
 class tac2_alphaAR : tac2_base {
-    primary[] = {"rhs_weap_m249_pip","rhsusf_acc_SFMB556","","rhsusf_acc_ACOG_RMR"};  
+    primary[] = {"rhs_weap_m249_pip","rhsusf_acc_SFMB556","","rhsusf_acc_ACOG_RMR","rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote","rhsusf_acc_saw_bipod"};
     magazines[] = {
         "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",4,
         "SmokeShell",2,
         "rhs_mag_m67",1,
-        "smokeShell",2,
         "Chemlight_red",2
     };
     items[] = {
@@ -253,11 +270,11 @@ class tac2_alphaRifle : tac2_base {
 class tac2_bravoFTL : tac2_Leadership {
     magazines[] +={
         "Chemlight_red",2
-    }
+    };
 };
 // bravo AR
 class tac2_bravoAR : tac2_base {
-    primary[] = {"rhs_weap_m249_pip","rhsusf_acc_SFMB556","","rhsusf_acc_ACOG_RMR"};  
+    primary[] = {"rhs_weap_m249_pip","rhsusf_acc_SFMB556","","rhsusf_acc_ACOG_RMR"};
     magazines[] = {
         "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote",4,
         "SmokeShell",2,
@@ -294,13 +311,23 @@ class tac2_bravoGren : tac2_base {
     "rhs_mag_m67",1,
     "smokeShell",2
     };
-
 };
 // bravo Rifleman
 class tac2_bravoRifle : tac2_base {
-    launcher[] = {"rhs_weap_m136"};
-    magazines[] += {
-        "Chemlight_blue",2
+    items[] = {
+        //standard
+        "ACE_microDAGR",1,
+        "ACE_Maptools",1,
+        "ACE_CableTie",2,
+        "ACE_EarPlugs",1,
+        //standard medical
+        "ACE_quikclot",70,
+        "ACE_tourniquet",12,
+        "ACE_morphine",8,
+        "ACE_epinephrine",8,
+        "ACE_PersonalAidKit",4,
+        //radios
+        "ACRE_ACRE_PRC343",1
     };
 };
 //Mustang
@@ -338,10 +365,10 @@ class tac2_Havoc : tac2_base {
     };
 };
 //Longshot
-tac2_longShot : tac2_base {
+class tac2_longShot : tac2_base {
     headgear[] = {"rhs_Booniehat_ocp"};
     vest[] = {"rhsusf_iotv_ocp_Rifleman"};
-    primary[] = {"rhs_weap_XM2010_d","rhsusf_acc_M2010S_d","rhsusf_acc_anpeq15side","rhsusf_acc_LEUPOLDMK4_2_d"};
+    primary[] = {"rhs_weap_XM2010_d","rhsusf_acc_M2010S_d","rhsusf_acc_anpeq15side","rhsusf_acc_LEUPOLDMK4_2_d","rhsusf_5Rnd_300winmag_xm2010","rhsusf_acc_harris_bipod"};
     secondary[] = {"rhsusf_weap_m9","","","",};
     magazines[] = {
         "rhsusf_5Rnd_300winmag_xm2010",30,
@@ -364,7 +391,7 @@ tac2_longShot : tac2_base {
         "ACE_PersonalAidKit",2,
         //radios
         "ACRE_ACRE_PRC343",1,
-        "ACRE_PRC152",1
+        "ACRE_PRC152",1,
         //extras
         "ACE_SpottingScope",1,
         "ACE_RangeCard",1,
@@ -386,4 +413,10 @@ class tac2_raider : tac2_heliPilot {
 };
 //Eagle
 class tac2_Eagle : tac2_jetPilot {
+};
+//Zeus
+class tac2_Zeus : tac2_Leadership {
+    items[] += {
+        'ALiVE_Tablet",1
+    };
 };

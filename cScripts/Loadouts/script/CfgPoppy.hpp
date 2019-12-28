@@ -13,5 +13,4 @@ class CfgPoppy {
         channelNames[] = {"GUNSLINGER","AVIATION","VIKING","LANCER","BANSHEE","SABRE","BANDIT","MISFIT","HAVOC","IDF-1","IDF-2","CAS-1","CAS-2","GROUND-TO-AIR","LOGISTICS","FARP","CONVOY","ZEUS","CAG","COMMAND"};
     };
 };
-
 #include "Dialog.hpp"

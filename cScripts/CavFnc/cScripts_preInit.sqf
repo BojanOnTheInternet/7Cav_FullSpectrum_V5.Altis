@@ -106,8 +106,6 @@ private _cScriptSettings = "cScripts Mission Settings";
     {}
 ] call CBA_fnc_addSetting;
 
-
-
 // Supply
 [
     QEGVAR(Settings,useCustomSupplyInventory),

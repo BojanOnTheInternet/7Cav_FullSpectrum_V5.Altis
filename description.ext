@@ -6,11 +6,10 @@
     loadScreen          = "Data\MissionLogo.paa";
     overviewPicture     = "Data\MissionLogo.paa";
 /*           RESAPWN          */
-
     respawn                = BASE;
     respawnDelay           = 4;
+    respawnOnStart         = -1;
     respawnTemplatesWest[] = {"MenuPosition"};
-    RespawnDialog = 0;
 
 /*           RULES            */
     cba_settings_hasSettingsFile = 1;

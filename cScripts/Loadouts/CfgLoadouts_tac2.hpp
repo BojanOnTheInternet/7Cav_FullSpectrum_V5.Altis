@@ -114,8 +114,8 @@ class tac2_Leadership : commonBlufor {
 //CREWMAN
 class tac2_crewman : tac2_base {
     headgear[] = {"rhsusf_cvc_helmet"};
-    vest[] = {"rhsusf_spc_ocp_Crewman"};
-    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};
+    vest[] = {"rhsusf_spcs_ocp_Crewman"};
+    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds","rhs_acc_grip_ffg2"};
     magazines[] = {
         "rhsusf_mag_40Rnd_46x30_AP",2,
         "SmokeShellOrange",4,
@@ -144,8 +144,8 @@ class tac2_crewman : tac2_base {
 //HELI PILOT
 class tac2_heliPilot : tac2_base {
     headgear[] = {"rhsusf_hgu56p_visor_mask_black"};
-    vest[] = {"rhsusf_spc_ocp_Crewman"};
-    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds"};
+    vest[] = {"rhsusf_spcs_ocp_Crewman"};
+    primary[] = {"rhsusf_weap_MP7A2","rhsusf_acc_anpeq15side_bk","rhsusf_acc_mrds","rhsusf_spcs_ocp_crewman"};
     magazines[] = {
         "rhsusf_mag_40Rnd_46x30_AP",2,
         "SmokeShellOrange",4,

@@ -2,13 +2,12 @@ class JB {
 	tag = "JB";
 	class functions {
 		file = "JB";
-		//greenzone related (to the best of my understanding)
-		class displayName {};
-		class showBlackScreenMessage{};
-
-		//vehicle respawns
-		respawnVehicleWhenAbandoned
-		respawnVehicleWhenKilled
-		respawnVehicleInitialize
+		class displayName {};				//greenzone related
+		class showBlackScreenMessage {};	//greenzone related
+		class respawnVehicleWhenAbandoned {};		//vehicle respawns
+		class respawnVehicleWhenKilled {};		//vehicle respawns
+		class respawnVehicleInitialize {};		//vehicle respawns
+		class respawnVehiclePreInit { preInit = 1; };
+		class respawnVehicleReturn {};
 	};
 };

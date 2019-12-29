@@ -5,7 +5,7 @@ class vehicle
 	{
 		file = "vehicle";
 		class respawnVehicleInitialize {};
-		class respawnVehiclePreInit { preInit = 1; };
+		class respawnVehiclePreInit {};
 		class respawnVehicleReturn {};
 		class respawnVehicleWhenAbandoned {};
 		class respawnVehicleWhenKilled {};

@@ -333,6 +333,7 @@ class tac2_bravoRifle : tac2_base {
 //Mustang
 class tac2_Mustang : tac2_base {
     backpack[] = {"B_kitbag_mcamo"};
+    primary[] = {"rhs_weap_m4_carryhandle_mstock","rhsusf_acc_SFMB556","rhsusf_acc_anpeq15side_bk","rhsusf_acc_","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhsusf_acc_rvg_blk"};
     vest[] = {"rhsusf_iotv_ocp_Medic"};
     items[] += {
        "ACE_elasticBandage",60,

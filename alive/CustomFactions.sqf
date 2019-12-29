@@ -49,38 +49,6 @@ BLU_GEN_F_typeMappings = [] call ALIVE_fnc_hashCreate;
 [BLU_GEN_F_mappings, "GroupFactionTypes", BLU_GEN_F_typeMappings] call ALIVE_fnc_hashSet;
 [ALIVE_factionCustomMappings, "BLU_GEN_F", BLU_GEN_F_mappings] call ALIVE_fnc_hashSet;
 // ---------------------------------------------------------------------------------------------------------------------
-// O_SovietAF
-
-O_SovietAF_typeMappings = [] call ALiVE_fnc_hashCreate;
-
-O_SovietAF_factionCustomGroups = [] call ALiVE_fnc_hashCreate;
-[O_SovietAF_factionCustomGroups,"Infantry", ["o_sovietaf_infantry_squad","o_sovietaf_infantry_squad_2","o_sovietaf_infantry_mmg_squad","o_sovietaf_infantry_at_squad"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"SpecOps", ["o_sovietaf_specops_recon_alpha","o_sovietaf_specops_recon_at","o_sovietaf_specops_recon_bravo","o_sovietaf_specops_recon_charlie","o_sovietaf_specops_recon_mmg"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Motorized", ["o_sovietaf_motorized_uaz_foot_patrol","o_sovietaf_motorized_uaz_group","o_sovietaf_motorized_uaz_patrol","o_sovietaf_motorized_ural_group","o_sovietaf_motorized_zil_group","o_sovietaf_motorized_zil_open_group"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Motorized_MTP", []] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Mechanized", ["o_sovietaf_mechanized_bmp_1patrol","o_sovietaf_mechanized_bmp_2patrol","o_sovietaf_mechanized_bmp_group","o_sovietaf_mechanized_btr_60_group","o_sovietaf_mechanized_btr_60_patrol","o_sovietaf_mechanized_btr_70_group","o_sovietaf_mechanized_btr_70_patrol","o_sovietaf_mechanized_btr_80_group","o_sovietaf_mechanized_btr_80_patrol","o_sovietaf_mechanized_btr_mixed_group","o_sovietaf_mechanized_prp_patrol"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Armored", ["o_sovietaf_armored_t72_group","o_sovietaf_armored_t72b_patrol","o_sovietaf_armored_t80_group","o_sovietaf_armored_t80_patrol"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Artillery", ["o_sovietaf_artillery_bm_21","o_sovietaf_artillery_d30_group","o_sovietaf_artillery_podnos_group"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Naval", ["o_sovietaf_naval_light_patrol"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Air", ["o_sovietaf_air_heavy_mixed","o_sovietaf_air_hind_heavy_patrol","o_sovietaf_air_hind_patrol","o_sovietaf_air_mi_8patrol","o_sovietaf_air_mixed"]] call ALiVE_fnc_hashSet;
-[O_SovietAF_factionCustomGroups,"Support", ["o_sovietaf_support_dshkm_squad","o_sovietaf_support_podnos_squad","o_sovietaf_support_spg_squad"]] call ALiVE_fnc_hashSet;
-
-O_SovietAF_mappings = [] call ALiVE_fnc_hashCreate;
-[O_SovietAF_mappings,"Side", "EAST"] call ALiVE_fnc_hashSet;
-[O_SovietAF_mappings,"GroupSideName", "EAST"] call ALiVE_fnc_hashSet;
-[O_SovietAF_mappings,"FactionName", "O_SovietAF"] call ALiVE_fnc_hashSet;
-[O_SovietAF_mappings,"GroupFactionName", "O_SovietAF"] call ALiVE_fnc_hashSet;
-[O_SovietAF_mappings,"GroupFactionTypes", O_SovietAF_typeMappings] call ALiVE_fnc_hashSet;
-[O_SovietAF_mappings,"Groups", O_SovietAF_factionCustomGroups] call ALiVE_fnc_hashSet;
-
-[ALiVE_factionCustomMappings,"O_SovietAF", O_SovietAF_mappings] call ALiVE_fnc_hashSet;
-
-[ALIVE_factionDefaultSupports, "O_SovietAF", ["O_SovietAF_UAZ_01","O_SovietAF_UAZ_Open_01","O_SovietAF_Ural_01","O_SovietAF_Ural_Open_01","O_SovietAF_ZiL_131_01","O_SovietAF_ZiL_131_Open_01","O_SovietAF_Ural_Fuel_01","O_SovietAF_Ural_Repair_01","O_SovietAF_GAZ_Ammo_01","O_SovietAF_Ural_ZU_23_01","O_SovietAF_BM_21_01"]] call ALIVE_fnc_hashSet;
-[ALIVE_factionDefaultTransport, "O_SovietAF", ["O_SovietAF_UAZ_01","O_SovietAF_UAZ_Open_01","O_SovietAF_Ural_01","O_SovietAF_Ural_Open_01","O_SovietAF_ZiL_131_01","O_SovietAF_ZiL_131_Open_01"]] call ALIVE_fnc_hashSet;
-[ALIVE_factionDefaultAirTransport, "O_SovietAF", ["O_SovietAF_Mi_8MT_01","O_SovietAF_Mi_8MTV_3_01","O_SovietAF_Mi_8T_01","O_SovietAF_Mi_8AMT_01"]] call ALIVE_fnc_hashSet;
-
-[ALIVE_factionDefaultSupplies, "O_SovietAF", ["rhs_spec_weapons_crate","rhs_3Ya40_1_single","rhs_gear_crate","rhs_launcher_crate"]] call ALIVE_fnc_hashSet;
-// ---------------------------------------------------------------------------------------------------------------------
 // B_UnitedStatesAF
 
 B_UnitedStatesAF_typeMappings = [] call ALiVE_fnc_hashCreate;

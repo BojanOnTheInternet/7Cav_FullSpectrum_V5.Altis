@@ -55,7 +55,7 @@ class tac2_base : commonBlufor {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1,
+        "ACRE_PRC343",1,
         "ACRE_PRC152",1
         };
     compass[] = {"ItemCompass"};
@@ -100,7 +100,7 @@ class tac2_Leadership : commonBlufor {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1
+        "ACRE_PRC343",1
         };
     compass[] = {"ItemCompass"};
     gps[] = {""};
@@ -135,7 +135,7 @@ class tac2_crewman : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1,
+        "ACRE_PRC343",1,
         "ACRE_PRC152",2,
         "toolkit",1
     };
@@ -165,7 +165,7 @@ class tac2_heliPilot : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1,
+        "ACRE_PRC343",1,
         "ACRE_PRC152",2,
         "toolkit",1
     };
@@ -197,7 +197,7 @@ class tac2_jetPilot : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1,
+        "ACRE_PRC343",1,
         "ACRE_PRC152",2
     };
     nvgs[] = {""};
@@ -241,7 +241,7 @@ class tac2_alphaAR : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1
+        "ACRE_PRC343",1
     };
 };
 // Alpha Grenadier
@@ -295,7 +295,7 @@ class tac2_bravoAR : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1
+        "ACRE_PRC343",1
     };
 };
 // bravo Grenadier
@@ -327,7 +327,7 @@ class tac2_bravoRifle : tac2_base {
         "ACE_epinephrine",8,
         "ACE_PersonalAidKit",4,
         //radios
-        "ACRE_ACRE_PRC343",1
+        "ACRE_PRC343",1
     };
 };
 //Mustang
@@ -391,7 +391,7 @@ class tac2_longShot : tac2_base {
         "ACE_epinephrine",2,
         "ACE_PersonalAidKit",2,
         //radios
-        "ACRE_ACRE_PRC343",1,
+        "ACRE_PRC343",1,
         "ACRE_PRC152",1,
         //extras
         "ACE_SpottingScope",1,
@@ -418,6 +418,6 @@ class tac2_Eagle : tac2_jetPilot {
 //Zeus
 class tac2_Zeus : tac2_Leadership {
     items[] += {
-        'ALiVE_Tablet",1
+        "ALiVE_Tablet",1
     };
 };

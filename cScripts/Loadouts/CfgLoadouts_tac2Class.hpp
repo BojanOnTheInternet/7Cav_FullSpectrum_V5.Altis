@@ -1,7 +1,7 @@
 /*
 * 7th Cavalry Regiment Full Spectrum Version 5.0
 * Altis using ALiVE
-* By Bojan & Citarelli
+*
 */
 
 //sabre

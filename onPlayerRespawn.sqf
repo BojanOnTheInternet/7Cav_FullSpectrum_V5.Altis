@@ -1,5 +1,5 @@
 diag_log "onPlayerRespawn start";
-
+hint "THIS IS ALL TULLY'S FAULT";
 waitUntil { not isNull player };
 waitUntil { not isNil "CLIENT_InitPlayerLocalComplete" };
 
@@ -9,14 +9,14 @@ player setDir (_respawn select 1);
 
 [player] remoteExec ["SERVER_CuratePlayer", 2];
 
-[player, [headquarters], []] execVM "scripts\greenZoneInit.sqf"; // No-combat zones
+[player, [Headquarters, Carrier], []] execVM "scripts\greenZoneInit.sqf"; // No-combat zones
 
 player addEventHandler ["Killed", { [_this select 0] spawn { sleep 300; hideBody (_this select 0) } }];
 
 [player, "novoice"] remoteExec ["setSpeaker", 0, true]; //JIP
 
 if (not isNil "CLIENT_RespawnLoadout") then { player setUnitLoadout CLIENT_RespawnLoadout };
-
+hint "THIS IS ALL TULLY'S FAULT";
 // Set camera view from the profile, and update the profile if the camera view changes
 private _cameraView = profileNamespace getVariable "CLIENT_RespawnCamera";
 if (not isNil "_cameraView" && { _cameraView in ["EXTERNAL", "INTERNAL"] }) then { player switchCamera _cameraView };

@@ -61,7 +61,6 @@ if (isMultiplayer) then {
 // XXX: Custom ALiVE Factions and Tasks
 execVM "alive\CustomFactions.sqf";
 execVM "alive\Tasks.sqf";
-execVM "Vcom\VcomInit.sqf";
 
 #ifdef DEBUG_MODE
     ["init completed."] call FUNC(logInfo);

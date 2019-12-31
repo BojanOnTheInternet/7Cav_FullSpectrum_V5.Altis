@@ -40,9 +40,6 @@ setDate _date;
 [] execVM "alive\CustomFactions.sqf";
 [] execVM "alive\Tasks.sqf";
 
-// XXX VCOM init
-[] execVM "Vcom\VcomInit.sqf";
-
 enableEnvironment [false, true];
 
 diag_log "initServer end";

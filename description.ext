@@ -2,9 +2,10 @@
     author              = "your friends at the 7th Cavalry Regiment!";
     onLoadName          = "7th Cavalry Full Spectrum (Beta)";
     onLoadMission       = "Welcome to 7th Cavalry Tactical Realism! Join us on TeamSpeak at ts3.7cav.us Password: 7thCavalry";
-    onLoadIntro         = "7th Cavalry Full Spectrum (Beta)";
+    onLoadIntro         = "7th Cavalry Full Spectrum ";
     loadScreen          = "Data\MissionLogo.paa";
     overviewPicture     = "Data\MissionLogo.paa";
+
 /*           RESAPWN          */
     respawn                = BASE;
     respawnDelay           = 4;
@@ -34,7 +35,6 @@
 
     class Extended_PreInit_EventHandlers {
         cScripts_preInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_preInit.sqf'";
-        VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_Functions\fn_CBASettings.sqf";
     };
     class Extended_PostInit_EventHandlers {
         cScripts_postInit = "0 spawn compile preprocessFileLineNumbers 'cScripts\CavFnc\cScripts_postInit.sqf'";
@@ -44,26 +44,39 @@
         #include "cScripts\CavFnc\CfgFunctions.hpp"
         #include "cScripts\Loadouts\script\CfgFunctions.hpp"
         #include "cScripts\ViewingDistance\CfgFunctions.hpp"
-        #include "vcom\cfgFunctions.hpp"
         #include "JB\CfgFunctions.hpp"
         #include "INIT\CfgFunctions.hpp"
     };
     #include "cScripts\Loadouts\script\CfgPoppy.hpp"
     #include "cScripts\ViewingDistance\GUI.h"
     #include "cScripts\CfgLoadouts.hpp"
-
-// XXX: Vcom AI | Taken straight from their GIT
-class CfgRemoteExec {
-	// List of script functions allowed to be sent from client via remoteExec
-	class Functions {
-		mode = 2;
-		jip = 1;		
-		class vcm_serverask { allowedTargets = 0;jip = 1; };
-		class VCM_PublicScript { allowedTargets = 0;jip = 1; };
-		class BIS_fnc_debugConsoleExec { allowedTargets = 0;jip = 1; };
-		class SpawnScript { allowedTargets = 0;jip = 1; };
-		class enableSimulationGlobal { allowedTargets = 0;jip = 1; };
-		class VCM_fnc_KnowAbout { allowedTargets = 0;jip = 1; };
-	};	
+	
+class CfgOrbat {
+	class 1b {
+		id = 7;       // Unit ID
+		idType = 0;    // Unit ID type
+		side = "West"; // Unit side from CfgChainOfCommand >> Sides
+		size = "Regiment"; // Unit size from CfgChainOfCommand >> Sizes. Displays relevant icon above the Type icon
+		type = "HQ"; // Unit type from CfgChainOfCommand >> Types
+		commander = "Chance"; // Name of unit commander. Can be either direct name, or class from CfgWorlds >> GenericNames (random name from the list is then selected)
+		commanderRank = "General"; // Rank of unit commander (by default selected based on unit size)
+		text = "7th Cavalry %3"; // Custom text and short text, can still use some arguments when defined:
+		textShort = "7Cav";
+		description= "7th Cavalry Airbase."
+		assets[] = {};
+ 	};
+	class 1o {
+		id = 76;       // Unit ID
+		idType = 0;    // Unit ID type
+		side = "East"; // Unit side from CfgChainOfCommand >> Sides
+		size = "Division"; // Unit size from CfgChainOfCommand >> Sizes. Displays relevant icon above the Type icon
+		type = "HQ"; // Unit type from CfgChainOfCommand >> Types
+		commander = "Alexey Naumets"; // Name of unit commander. Can be either direct name, or class from CfgWorlds >> GenericNames (random name from the list is then selected)
+		commanderRank = "General"; // Rank of unit commander (by default selected based on unit size)
+		text = "76-я гвардейская десантно-штурмовая"; // Custom text and short text, can still use some arguments when defined:
+		textShort = "%1 ВДВ %3";
+		description= "76th VDV Division Headquarters."
+		assets[] = {};
+ 	};
 };
 //End of file
